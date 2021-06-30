@@ -118,126 +118,87 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"old.js":[function(require,module,exports) {
-var Dog =
-/** @class */
-function () {
-  function Dog() {}
+/*
+class Dog {
+    private _name;
 
-  Object.defineProperty(Dog.prototype, "name", {
-    get: function get() {
-      return this._name;
-    },
-    set: function set(value) {
-      this._name = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(Dog.prototype, "type", {
-    get: function get() {
-      return 'dog';
-    },
-    enumerable: false,
-    configurable: true
-  });
-  return Dog;
-}();
-
-var Cat =
-/** @class */
-function () {
-  function Cat() {}
-
-  Object.defineProperty(Cat.prototype, "name", {
-    get: function get() {
-      return this._name;
-    },
-    set: function set(value) {
-      this._name = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(Cat.prototype, "type", {
-    get: function get() {
-      return 'cat';
-    },
-    enumerable: false,
-    configurable: true
-  });
-  return Cat;
-}();
-
-var Parrot =
-/** @class */
-function () {
-  function Parrot() {}
-
-  Object.defineProperty(Parrot.prototype, "name", {
-    get: function get() {
-      return this._name;
-    },
-    set: function set(value) {
-      this._name = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(Parrot.prototype, "type", {
-    get: function get() {
-      return 'parrot';
-    },
-    enumerable: false,
-    configurable: true
-  });
-  return Parrot;
-}();
-
-var Zoo =
-/** @class */
-function () {
-  function Zoo() {
-    this._animals = new Array();
-  }
-
-  Zoo.prototype.addAnimal = function (animal) {
-    this._animals.push(animal);
-  };
-
-  Object.defineProperty(Zoo.prototype, "animals", {
-    get: function get() {
-      return this._animals;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  Zoo.prototype.makeSound = function (animal) {
-    switch (animal.type) {
-      case 'cat':
-        return 'Miauw';
-
-      case 'dog':
-        return 'Woef';
-
-      case 'parrot':
-        return 'I am a pirate';
-
-      default:
-        throw new Error('Unknown type: ' + animal.type);
+    set name(value) {
+        this._name = value;
     }
-  };
 
-  return Zoo;
-}();
+    get name() {
+        return this._name;
+    }
 
-var zoo = new Zoo();
-zoo.addAnimal(new Cat());
-zoo.addAnimal(new Dog());
-zoo.addAnimal(new Parrot());
-zoo.animals.forEach(function (animal) {
-  document.querySelector('#target').innerHTML += animal.type + ": " + zoo.makeSound(animal) + "<br>";
-});
+    get type() {
+        return 'dog';
+    }
+}
+
+class Cat {
+    private _name;
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return 'cat';
+    }
+}
+
+class Parrot {
+    private _name;
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return 'parrot';
+    }
+}
+
+class Zoo {
+    private _animals : Array<Object> = new Array<Object>();
+
+    public addAnimal(animal: object) {
+        this._animals.push(animal);
+    }
+
+    get animals(): Array<Object> {
+        return this._animals;
+    }
+
+    public makeSound(animal: object) : string {
+        switch(animal.type) {
+            case 'cat':
+                return 'Miauw';
+            case 'dog':
+                return 'Woef';
+            case 'parrot':
+                return 'I am a pirate';
+            default:
+                throw new Error('Unknown type: '+ animal.type);
+        }
+    }
+}
+let zoo = new Zoo;
+zoo.addAnimal(new Cat);
+zoo.addAnimal(new Dog);
+zoo.addAnimal(new Parrot);
+
+zoo.animals.forEach((animal) => {
+    document.querySelector('#target').innerHTML += (animal.type + ": " + zoo.makeSound(animal) + "<br>");
+});*/
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -1,85 +1,65 @@
-var Dog = /** @class */ (function () {
-    function Dog() {
+/*
+class Dog {
+    private _name;
+
+    set name(value) {
+        this._name = value;
     }
-    Object.defineProperty(Dog.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (value) {
-            this._name = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Dog.prototype, "type", {
-        get: function () {
-            return 'dog';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Dog;
-}());
-var Cat = /** @class */ (function () {
-    function Cat() {
+
+    get name() {
+        return this._name;
     }
-    Object.defineProperty(Cat.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (value) {
-            this._name = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Cat.prototype, "type", {
-        get: function () {
-            return 'cat';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Cat;
-}());
-var Parrot = /** @class */ (function () {
-    function Parrot() {
+
+    get type() {
+        return 'dog';
     }
-    Object.defineProperty(Parrot.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (value) {
-            this._name = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Parrot.prototype, "type", {
-        get: function () {
-            return 'parrot';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Parrot;
-}());
-var Zoo = /** @class */ (function () {
-    function Zoo() {
-        this._animals = new Array();
+}
+
+class Cat {
+    private _name;
+
+    set name(value) {
+        this._name = value;
     }
-    Zoo.prototype.addAnimal = function (animal) {
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return 'cat';
+    }
+}
+
+class Parrot {
+    private _name;
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return 'parrot';
+    }
+}
+
+class Zoo {
+    private _animals : Array<Object> = new Array<Object>();
+
+    public addAnimal(animal: object) {
         this._animals.push(animal);
-    };
-    Object.defineProperty(Zoo.prototype, "animals", {
-        get: function () {
-            return this._animals;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Zoo.prototype.makeSound = function (animal) {
-        switch (animal.type) {
+    }
+
+    get animals(): Array<Object> {
+        return this._animals;
+    }
+
+    public makeSound(animal: object) : string {
+        switch(animal.type) {
             case 'cat':
                 return 'Miauw';
             case 'dog':
@@ -87,15 +67,15 @@ var Zoo = /** @class */ (function () {
             case 'parrot':
                 return 'I am a pirate';
             default:
-                throw new Error('Unknown type: ' + animal.type);
+                throw new Error('Unknown type: '+ animal.type);
         }
-    };
-    return Zoo;
-}());
-var zoo = new Zoo;
+    }
+}
+let zoo = new Zoo;
 zoo.addAnimal(new Cat);
 zoo.addAnimal(new Dog);
 zoo.addAnimal(new Parrot);
-zoo.animals.forEach(function (animal) {
+
+zoo.animals.forEach((animal) => {
     document.querySelector('#target').innerHTML += (animal.type + ": " + zoo.makeSound(animal) + "<br>");
-});
+});*/
